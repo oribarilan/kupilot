@@ -6,8 +6,9 @@ on:
             - main
       
 jobs:
-    test:
+    validate:
         runs-on: ubuntu-latest
+        name: PR Build
 
         steps:
             - name: Checkout code
