@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Kupilot</h1>
 
-<img width="25%" src="./artifacts/kupilot.jpg">
+<img width="25%" src="./kupilot.jpg">
 
 <br />
 <br />
@@ -25,7 +25,7 @@ See it in action:
 
 <div align="center">
   <br />
-  <img width="55%" src="./artifacts/kupilot.gif">
+  <img width="55%" src="./kupilot.gif">
   <br />
 </div>
 
