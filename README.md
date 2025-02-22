@@ -12,6 +12,10 @@
 
 <hr />
 
+## Work in progress
+
+🚧 This project is very early stages.
+
 ## Intro
 
 Kupilot is a VSCode extension that adds GitHub Copilot support for Azure Data Explorer (aka Kusto).
