@@ -1,10 +1,8 @@
 name: PR Extension Build
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
         run: vsce package
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: extension-vsix
           path: '*.vsix'
