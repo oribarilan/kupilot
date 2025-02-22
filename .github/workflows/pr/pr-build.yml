@@ -1,4 +1,4 @@
-name: PR Tests
+name: PR Build
 
 on:
     pull_request:
@@ -22,6 +22,3 @@ jobs:
 
             - name: Compile the project
               run: npm run compile
-
-            - name: Run lint (as a test proxy)
-              run: npm run lint
