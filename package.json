@@ -1,0 +1,119 @@
+{
+    "publisher": "obi",
+    "name": "kupilot",
+    "displayName": "Kupilot",
+    "description": "Kusto Copilot chat extension for Visual Studio Code helps in creating kql queries based on your schema",
+    "icon": "kupilot.jpg",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oribarilan/kupilot"
+    },
+    "version": "0.1.11",
+    "engines": {
+        "vscode": "^1.92.0"
+    },
+    "preview": true,
+    "categories": [
+        "AI",
+        "Chat",
+        "Azure"
+    ],
+    "activationEvents": [],
+    "contributes": {
+        "chatParticipants": [
+            {
+                "id": "kusto.kupilot",
+                "fullName": "kupilot",
+                "name": "kupilot",
+                "description": "Kusto Copilot, at your service!",
+                "isSticky": true,
+                "commands": [
+                    {
+                        "name": "exploreDb",
+                        "description": "Explore the database schema"
+                    },
+                    {
+                        "name": "optimize",
+                        "description": "Let's optimize your query"
+                    },
+                    {
+                        "name": "somethingNew",
+                        "description": "I can show you something new about Kusto"
+                    },
+                    {
+                        "name": "explain",
+                        "description": "Explain the selected code snippet"
+                    },
+                    {
+                        "name": "configure",
+                        "description": "Let's configure your Kusto cluster"
+                    },
+                    {
+                        "name": "resultsPreview",
+                        "description": "Preview results from a KQL query"
+                    }
+                ],
+                "disambiguation": [
+                    {
+                        "categoryName": "Kusto",
+                        "description": "The user wants to learn about Kusto (aka Azure Data Explorer) and/or his data within Kusto and/or KQL.",
+                        "examples": [
+                            "What tables do I have in my database?",
+                            "How can I optimize my KQL query?",
+                            "What is the best way to visualize my data?"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "commands": [
+            {
+                "command": "kupilot.config",
+                "title": "Kupilot: Configure"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Kupilot Extension Configuration",
+            "properties": {
+                "kupilot.clusterUri": {
+                    "type": "string",
+                    "description": "The URI of your Kusto cluster (e.g., https://my-cluster.my-region.kusto.windows.net)."
+                },
+                "kupilot.database": {
+                    "type": "string",
+                    "description": "The name of the Kusto database."
+                },
+                "kupilot.tenantId": {
+                    "type": "string",
+                    "description": "The tenant ID hosting your Azure identity (for authentication purposes)."
+                }
+            }
+        }
+    },
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile && npm run copy-artifacts",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./",
+        "copy-artifacts": "copyfiles -u 1 src/artifacts/* out/"
+    },
+    "dependencies": {
+        "@azure/identity": "^4.4.1",
+        "@vscode/prompt-tsx": "^0.2.3-alpha",
+        "azure-kusto-data": "^6.0.2",
+        "pako": "^2.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.5.9",
+        "@types/pako": "^2.0.3",
+        "@types/vscode": "1.90.0",
+        "@typescript-eslint/eslint-plugin": "^7.14.0",
+        "@typescript-eslint/parser": "^7.14.0",
+        "copyfiles": "^2.4.1",
+        "eslint": "^8.26.0",
+        "prettier": "^3.3.3",
+        "typescript": "^5.5.2"
+    }
+}
