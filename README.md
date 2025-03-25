@@ -40,14 +40,13 @@ See it in action:
 
 1. Kupilot is available in the [marketplace](https://marketplace.visualstudio.com/items?itemName=obi.kupilot), just search for it in the VSCode extension tab or navigate to the marketplace and install it.
 2. Configure the extension with one of the options below:
-    1. Execute `Kupilot: Configure` command (in the command palette)
-    2. Manually set the following settings in your `settings.json`:
+    1. Manually set the following settings in your `settings.json`:
     ```json
     "kupilot.clusterUri": "https://<cluster-name>.<region>.kusto.windows.net",
     "kupilot.database": "<database-name>",
     "kupilot.tenantId": "<tenant-id>",
     ```
-    3. Prompt `@kupilot` with `/configure` command in the chat.
+    2. Prompt `@kupilot` with `/configure` command in the chat. You will be prompted to enter the clusterUri, database and tenantId.
 
 ## Usage
 
